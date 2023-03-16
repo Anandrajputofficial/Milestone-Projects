@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Highlighting</title>
+	<style>
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p id="my-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel vestibulum eros. Maecenas mollis arcu eu nunc suscipit lobortis. Duis consectetur convallis libero quis malesuada. Nulla facilisi. Sed vel arcu convallis, tincidunt nulla sit amet, feugiat enim. Sed dignissim lectus id sapien dignissim suscipit. Proin dictum, libero eget laoreet suscipit, nisi nisl interdum justo, vitae facilisis nulla est id velit. Fusce luctus mauris ut dolor malesuada vehicula. Ut blandit suscipit leo, at sagittis diam finibus vitae. Ut pulvinar massa vel sapien rhoncus, eu pretium elit aliquet. Nullam interdum elit vel felis bibendum, ut consectetur turpis tempor. Sed eu nunc dolor.</p>
+
+	<script>
+		const paragraph = document.getElementById('my-paragraph');
+		const words = paragraph.innerHTML.split(' ');
+
+		// Loop through each word and check if it has more than 8 characters
+		for (let i = 0; i < words.length; i++) {
+			if (words[i].length > 8) {
+				words[i] = '<span class="highlight">' + words[i] + '</span>';
+			}
+		}
+
+		// Join the words array back into a string and update the paragraph element
+		paragraph.innerHTML = words.join(' ');
+	</script>
+</body>
+</html>
